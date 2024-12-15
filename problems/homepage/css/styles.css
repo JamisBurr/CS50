@@ -1,0 +1,466 @@
+/* Stylesheet for Gremlin's Gallery website */
+
+/*
+General Styles:
+This section contains the general styles for the website.
+*/
+
+
+/*
+Top Navigation:
+This section defines the styles for the top navigation bar.
+*/
+.topnav {
+  background-color: #202020;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  padding-left: 18px;
+}
+
+
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: white;
+  padding: 14px 18px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Large screens */
+@media (min-width: 768px) {
+  .topnav a {
+    font-size: 18px;
+  }
+}
+
+/* Medium screens */
+@media (min-width: 501px) and (max-width: 768px) {
+  .topnav a {
+    font-size: 17px;
+  }
+}
+
+/* Small screens */
+@media (max-width: 500px) {
+  .topnav a {
+    font-size: 16px;
+  }
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #fff;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #de250d;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+  padding-right: 34px;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {
+    position: relative;
+    bottom: 0;
+  }
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+/*
+Page Loader:
+This section defines the styles for the page loader.
+*/
+.page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://cdn.midjourney.com/00756889-55ef-489b-87c0-5db337a8f418/grid_0.png");
+  background-size: cover;
+  background-position: center center;
+  z-index: 999;
+  transition: opacity 1s ease;
+}
+
+/*
+Pace.js Styles:
+This section defines the styles for the Pace.js activity indicators.
+*/
+.pace {
+	-webkit-pointer-events: none;
+	pointer-events: none;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+.pace .pace-activity {
+	display: block;
+	position: fixed;
+	z-index: 2000;
+	top: 0;
+	right: 0;
+	width: 300px;
+	height: 300px;
+	background: #d22d2d;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+	-webkit-transform: translateX(100%) translateY(-100%) rotate(45deg);
+	transform: translateX(100%) translateY(-100%) rotate(45deg);
+	pointer-events: none;
+}
+
+.pace.pace-active .pace-activity {
+	-webkit-transform: translateX(50%) translateY(-50%) rotate(45deg);
+	transform: translateX(50%) translateY(-50%) rotate(45deg);
+}
+
+.pace .pace-activity::before,
+.pace .pace-activity::after {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	display: block;
+	border: 5px solid #fff;
+	border-radius: 50%;
+	content: '';
+}
+
+.pace .pace-activity::before {
+	margin-left: -40px;
+	width: 80px;
+	height: 80px;
+	border-right-color: rgba(0, 0, 0, .2);
+	border-left-color: rgba(0, 0, 0, .2);
+	-webkit-animation: pace-theme-corner-indicator-spin 3s linear infinite;
+	animation: pace-theme-corner-indicator-spin 3s linear infinite;
+}
+
+.pace .pace-activity::after {
+	bottom: 50px;
+	margin-left: -20px;
+	width: 40px;
+	height: 40px;
+	border-top-color: rgba(0, 0, 0, .2);
+	border-bottom-color: rgba(0, 0, 0, .2);
+	-webkit-animation: pace-theme-corner-indicator-spin 1s linear infinite;
+	animation: pace-theme-corner-indicator-spin 1s linear infinite;
+}
+
+@-webkit-keyframes pace-theme-corner-indicator-spin {
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(359deg); }
+}
+@keyframes pace-theme-corner-indicator-spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(359deg); }
+}
+
+/*
+Body and Background Image:
+This section defines the styles for the body and background image.
+*/
+body
+{
+    color: silver;
+    background-color: black;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    font: 400 15px/1.8 "Lato", sans-serif;
+    color: #777;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+/* Background Image */
+.bgimg-1 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    }
+
+.bgimg-1::before {
+    content: "";
+    background-image: url("https://cdn.midjourney.com/00756889-55ef-489b-87c0-5db337a8f418/grid_0.png");
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.75;
+    z-index: 1;
+}
+
+/* Remove Scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+/*
+Homepage Caption:
+*/
+
+/* This section defines the styles for the homepage caption. */
+.caption {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    z-index: 50;
+    }
+
+.caption span.border {
+    background-color: #111;
+    color: #fff;
+    padding: 18px;
+    font-size: 2vw;
+    letter-spacing: 10px;
+    }
+
+@media screen and (max-width: 600px) {
+  .caption {
+    display: none;
+  }
+}
+
+/*
+Gallery
+*/
+
+/* This section defines the styles for the gallery. */
+.container {
+  position: relative;
+  display: flex;
+  flex: 1 0 auto;
+  justify-content: center;
+  z-index: 50;
+  max-width: 1200px;
+  width: 80%;
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  .container {
+    margin-top: 125px;
+    margin-bottom: 55px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 501px) and (max-width: 768px) {
+  .container {
+    margin-top: 105px;
+    margin-bottom: 40px;
+    width: 80%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  .container {
+    margin-top: 90px;
+    margin-bottom: 30px;
+    width: 80%;
+  }
+}
+
+.gallery {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+ grid-gap: 30px;
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  .gallery {
+    grid-gap: 25px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 501px) and (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 15px;
+  }
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  border: calc(0.1vw + 2px) solid white;
+  border-radius: 5%;
+}
+
+/*
+Headers and Footer:
+*/
+
+/* This section defines the styles for the headers and footer. */
+.header {
+  max-width: 1200px;
+  text-align: justify;
+  background: #111;
+  color: white;
+  z-index: 50;
+}
+
+h1 {
+  color: #fff;
+  margin: 35px;
+  font-size: 30px;
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  h1 {
+    font-size: 30px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 501px) and (max-width: 768px) {
+  h1 {
+    font-size: 25px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  h1 {
+    font-size: 20px;
+  }
+}
+
+p {
+  color: #fff;
+  margin: 35px;
+  font-size: 18px;
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  p {
+    font-size: 18px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 501px) and (max-width: 768px) {
+  p {
+    font-size: 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  p {
+    font-size: 14px;
+  }
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  z-index: 1555;
+  flex-grow: 1;
+}
+
+.footer {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #202020;
+  color: #fff;
+  text-align: center;
+}
+
+text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  text {
+    font-size: 18px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 501px) and (max-width: 768px) {
+  text {
+    font-size: 17px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  text {
+    font-size: 16px;
+  }
+}

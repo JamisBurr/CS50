@@ -1,0 +1,42 @@
+/* Stylesheet for Gremlin's Gallery website */
+
+/*
+General Styles:
+This section contains the general styles for the website.
+*/
+
+.gallery {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ grid-gap: 30px;
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  .gallery {
+    grid-gap: 25px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 501px) and (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 15px;
+  }
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  border: calc(0.1vw + 2px) solid white;
+  border-radius: 5%;
+}

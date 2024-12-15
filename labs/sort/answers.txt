@@ -1,0 +1,104 @@
+--------------------------
+
+//sort1 uses: Bubble Sort
+
+//How do you know?:
+
+We can find the answer by checking the increase in runtime based on a sorted situation (sorted50000.txt).
+Timing the runtime of "sort1", "sort2", and "sort3" using sorted5000.txt, sorted10000.txt, and sorted50000.txt allows us to
+determine this sorting method due to "sort1" maintaining the QUICKEST runtime of Ω(n) when increasing n by five times (sorted10000.txt > sorted50000.txt).
+
+Reference TESTING at the bottom of the page for details.
+
+//Runtime Placements:
+
+    Sorted: 1st
+    Reversed: 3rd
+    Random: 3rd
+
+--------------------------
+
+//sort2 uses: Merge Sort
+
+//How do you know?:
+
+We can find the answer by checking the increase in runtime based on the most challenging sorting situation available (random50000.txt).
+Timing the runtime of “sort1”, “sort2”, and “sort3” using the random5000.txt, random10000.txt, and random50000.txt files allows us to
+determine this sorting method because “sort2” maintains the QUICKEST runtime of Ω(n log n) when increasing n by five times (random10000.txt > random50000.txt).
+
+Reference TESTING at the bottom of the page for details.
+
+//Runtime Placements:
+
+    Sorted: 2nd
+    Reversed: 1st
+    Random: 1st
+
+--------------------------
+
+//sort3 uses: Selection Sort
+
+//How do you know?:
+
+We can find the answer by checking the increase in runtime based on a sorted situation (sorted50000.txt).
+Timing the runtime of "sort1", "sort2", and "sort3" using sorted5000.txt, sorted10000.txt, and sorted50000.txt allows us to
+determine this sorting method due to "sort1" maintaining the SLOWEST runtime of O(n^2) when increasing n by five times (sorted10000.txt > sorted50000.txt).
+
+Reference TESTING at the bottom of the page for details.
+
+//Runtime Placements:
+
+    Sorted: 3rd
+    Reversed: 2nd
+    Random: 2nd
+
+--------------------------
+
+
+
+TESTING:
+
+_______
+Sorted:
+
+ Sort1: sorted5000.txt = real .042s
+ Sort1: sorted10000.txt = real .083
+ Sort1: sorted50000.txt = real .579s
+
+ Sort2: sorted5000.txt = real .043s
+ Sort2: sorted10000.txt = real .075s
+ Sort2: sorted50000.txt = real .926s
+
+ Sort3: sorted5000.txt = real .080s
+ Sort3: sorted10000.txt = real .195a
+ Sort3: sorted50000.txt = real 3.438s
+
+_______
+Reversed:
+
+ Sort1: reveresed5000.txt = real .088s
+ Sort1: reveresed10000.txt = real .315s
+ Sort1: reveresed50000.txt = real 6.615s
+
+ Sort2: reversed50000.txt = real .050s
+ Sort2: reversed10000.txt = real .089s
+ Sort2: reversed50000.txt = real .864s
+
+ Sort3: reversed5000.txt = real .084s
+ Sort3: reversed10000.txt = real .255s
+ Sort3: reversed50000.txt = real 3.910s
+
+_______
+Random:
+
+ Sort1: random5000.txt = real 0.114s
+ Sort1: random10000.txt = real 0.296s
+ Sort1: random50000.txt = real 8.260s
+
+ Sort2: random5000.txt = real .054s
+ Sort2: random10000.txt = real .093s
+ Sort2: random50000.txt = real .825
+
+ Sort3: random5000.txt = real .073s
+ Sort3: random10000.txt = real .177s
+ Sort3: random50000.txt = real 3.865s
